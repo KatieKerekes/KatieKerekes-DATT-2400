@@ -1,0 +1,46 @@
+void setup() {
+  
+  size(600, 600);
+background (#09113E);
+  for(int i = 0; i< 100; i++) {
+    star (random(width), random(height), random (30),random(360));
+  }
+}
+
+void draw() {
+
+  
+}
+
+
+void star (float x, float y, float size, float rot) {
+  stroke(#E3D090);
+ 
+  pushMatrix();
+  
+  translate(x, y);
+  line(0, 0, size, 0);
+  line(0, 0, 0, size);
+  
+  line (-size, 0, 0, 0);
+  line(0, -size, 0, 0);
+  
+  popMatrix();
+  
+  pushMatrix();
+  
+  translate( x, y);
+  
+  rotate(radians(rot));
+  
+  line(0, 0, size/2, 0);
+  line(0, 0, 0, size/2);
+  
+  line(-size/2, 0, 0, 0);
+  line(0, -size/2, 0, 0);
+  
+  popMatrix();
+  
+  saveFrame();
+  
+}
