@@ -1,0 +1,33 @@
+float x = 300;
+float y = 300;
+float angle;
+float z = 20;
+
+void setup() {
+  size(700, 700);
+}
+
+void draw () {
+  background(5);
+  
+  translate(width/2, height/2);
+  rotate(radians(angle/3));
+  for (float a=0; a<360; a+=10) {
+    pushMatrix();
+    rotate(radians(a));
+    stroke(#B676EA);
+    strokeWeight(2);
+    line(x*sin(radians(angle)), 0, 0, y-z/2);
+    
+    noStroke();
+    fill(#B676EA);
+    ellipse(x*sin(radians(angle)), 0, z/2, z/2);
+    stroke(#B676EA);
+    noFill();
+    ellipse(0, y, z, z);
+    popMatrix();
+  }
+  angle++;
+  
+  //saveFrame("####_out.png");
+}
